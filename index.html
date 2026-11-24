@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KUJO | Furniture Rental</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <nav class="navbar">
+
+            <a href="#home" class="logo">KUJO<span>.</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collection">Furniture</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <button class="cart-button" onclick="toggleCart()">
+                Cart <span id="cart-count">0</span>
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="hero-label">
+                FURNITURE RENTAL · MADE FLEXIBLE
+            </p>
+
+            <h1>
+                Your space.<br>
+                Your style.<br>
+                Your way.
+            </h1>
+
+            <p class="hero-description">
+                Beautiful furniture for the life you're living right now.
+                Rent, enjoy, and change whenever life changes.
+            </p>
+
+            <a href="#collection" class="hero-button">
+                Explore Furniture →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FURNITURE COLLECTION -->
+    <section class="collection section-padding" id="collection">
+
+        <div class="section-heading">
+
+            <p class="small-label">OUR COLLECTION</p>
+
+            <h2>Find your perfect piece.</h2>
+
+            <p>
+                Thoughtfully selected furniture for every corner of your home.
+            </p>
+
+        </div>
+
+
+        <!-- CATEGORY FILTERS -->
+        <div class="categories">
+
+            <button class="category-button active"
+                onclick="filterFurniture('All', this)">
+                All Furniture
+            </button>
+
+            <button class="category-button"
+                onclick="filterFurniture('Living Room', this)">
+                Living Room
+            </button>
+
+            <button class="category-button"
+                onclick="filterFurniture('Bedroom', this)">
+                Bedroom
+            </button>
+
+            <button class="category-button"
+                onclick="filterFurniture('Dining', this)">
+                Dining
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTS WILL BE CREATED BY JAVASCRIPT -->
+        <div class="products" id="products">
+
+        </div>
+
+    </section>
+
+
+    <!-- ROOM PACKAGES -->
+    <section class="packages section-padding" id="packages">
+
+        <div class="section-heading">
+
+            <p class="small-label">CURATED FOR YOU</p>
+
+            <h2>Make moving feel easy.</h2>
+
+            <p>
+                Complete furniture packages for every new chapter.
+            </p>
+
+        </div>
+
+
+        <div class="package-grid">
+
+            <div class="package-card package-student">
+
+                <div class="package-content">
+
+                    <p>01 · THE ESSENTIALS</p>
+
+                    <h3>Student Starter</h3>
+
+                    <p>
+                        Everything you need to create a comfortable
+                        study and living space.
+                    </p>
+
+                    <h4>From $89/month</h4>
+
+                    <button onclick="showPackage('Student Starter')">
+                        Explore Package →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="package-card package-living">
+
+                <div class="package-content">
+
+                    <p>02 · THE COMFORT</p>
+
+                    <h3>Cozy Living</h3>
+
+                    <p>
+                        Create a warm, welcoming living room
+                        with furniture made for relaxing.
+                    </p>
+
+                    <h4>From $99/month</h4>
+
+                    <button onclick="showPackage('Cozy Living')">
+                        Explore Package →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="package-card package-home">
+
+                <div class="package-content">
+
+                    <p>03 · THE COMPLETE</p>
+
+                    <h3>First Home</h3>
+
+                    <p>
+                        Furnish your new home with pieces
+                        designed to work beautifully together.
+                    </p>
+
+                    <h4>From $179/month</h4>
+
+                    <button onclick="showPackage('First Home')">
+                        Explore Package →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works section-padding" id="how-it-works">
+
+        <div class="section-heading">
+
+            <p class="small-label">SIMPLE AS 1, 2, 3</p>
+
+            <h2>Living made simple.</h2>
+
+        </div>
+
+
+        <div class="steps-grid">
+
+            <div class="step">
+
+                <span>01</span>
+
+                <h3>Choose</h3>
+
+                <p>
+                    Explore furniture and find pieces
+                    that match your space and style.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <span>02</span>
+
+                <h3>Rent</h3>
+
+                <p>
+                    Select your furniture and rental
+                    period to fit your lifestyle.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <span>03</span>
+
+                <h3>Enjoy</h3>
+
+                <p>
+                    Your furniture arrives. You create
+                    a space that feels like home.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUSTAINABILITY SECTION -->
+    <section class="sustainability">
+
+        <div class="sustainability-content">
+
+            <p class="small-label">A SECOND LIFE FOR FURNITURE</p>
+
+            <h2>Good furniture.<br>More than one home.</h2>
+
+            <p>
+                We believe furniture deserves to be loved for longer.
+                Through rental and reuse, we help create a more
+                flexible and thoughtful way to furnish your space.
+            </p>
+
+            <a href="#about" class="dark-button">
+                Discover Our Story →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about section-padding" id="about">
+
+        <p class="small-label">OUR STORY</p>
+
+        <h2>Furniture should fit your life.</h2>
+
+        <p class="about-description">
+
+            At KUJO, we believe your home should reflect the life
+            you're living today.
+
+            Whether you're moving into your first apartment,
+            studying in a new city, or simply changing your style,
+            furniture shouldn't be a permanent commitment.
+
+            We make it easier to create beautiful spaces through
+            flexible furniture rentals.
+
+        </p>
+
+    </section>
+
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+
+        <h2>Make yourself at home.</h2>
+
+        <p>
+            Discover furniture that moves with your life.
+        </p>
+
+        <form id="newsletter-form">
+
+            <input
+                type="email"
+                id="newsletter-email"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <button type="submit">
+                Join KUJO →
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-top">
+
+            <div>
+
+                <a href="#home" class="footer-logo">KUJO<span>.</span></a>
+
+                <p>Your space. Your style. Your way.</p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#collection">Furniture</a>
+
+                <a href="#packages">Packages</a>
+
+                <a href="#how-it-works">How It Works</a>
+
+                <a href="#about">About</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>© 2026 KUJO Furniture Rental.</p>
+
+            <p>Designed for flexible living.</p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" id="cart-overlay"
+        onclick="toggleCart()">
+
+    </div>
+
+
+    <div class="cart-sidebar" id="cart-sidebar">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button class="close-cart" onclick="toggleCart()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="cart-items">
+
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <h3>
+                Monthly Total:
+                <span id="cart-total">$0</span>
+            </h3>
+
+            <button class="checkout-button"
+                onclick="checkout()">
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
